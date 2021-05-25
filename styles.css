@@ -7,73 +7,114 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    width: 100vw;
 }
 
 /*------------------------ HEADER ------------------*/
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-content: center;
     max-width: 1440px;
     margin: 0 auto;
-    height: 80px;
-    font-size: 18px;
+    padding: 0 30px;
 }
 
-.logo {
-    display: block;
-    height: 80px;
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    height: 100%;
 }
 
-.logo img {
-    position: relative;
-    top: 35px;
+nav div {
+    padding: 25px 0;
+    text-align: center;
+    height: 100px;
 }
 
-nav ul {
-    display: flex;
-    list-style-type: none;
+nav div:first-of-type {
+    text-align: left;
 }
-
-nav li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    margin: 0 10px 0 10px;
-    width: 140px;
-    padding: 0 5px;
+.nav-activites, .nav-hebergements, .nav-suscribe {
+    padding-top: 40px;
+}
+.nav-hebergements {
+    grid-column: 3 / 4;
+    border-top: 3px solid #0065FC;
+    color: #0065FC;
+}
+.nav-activites {
+    grid-column: 4 / 5;
     border-top: 3px solid transparent;
 }
 
-nav li a {
-    text-decoration: none;
-    color: #000;
+.nav-activites:hover {
+    border-top: 3px solid #0065FC;
 }
 
-.active, .hover:hover {
-    border-top: 2px solid#0065FC;
-}
-
-.active a, .hover a:hover {
+.nav-activites a:hover, .nav-hebergements a, .nav-suscribe a {
     color: #0065FC;
 }
 
-.suscribe {
-    color:#0065FC;
+.nav-suscribe {
     font-weight: bold;
 }
 
+@media screen and (max-width: 576px) {
+    
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 65px 65px;
+        padding: 0;
+        margin-bottom: 60px;
+    }
 
+    .nav-hebergements {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        border-top: none;
+        border-bottom: 3px solid #0065FC;
+    }
+
+    .nav-activites {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        border-top: none;
+        border-bottom: 3px solid #e2e2e2;
+    }
+
+    .nav-activites:hover {
+        border-top: none;
+        border-bottom: 3px solid #0065FC;
+    }
+
+    .nav-logo {
+        padding-left: 30px;
+        padding-top: 30px;
+    }
+
+    .nav-suscribe {
+        text-align: right;
+        padding-right: 30px;
+    }
+
+
+}
 /*-------------------- MAIN RECHERCHE-------------------*/
 main {
     max-width: 1440px;
+    margin: 0 auto;
+}
+
+.recherche-section {
+    padding: 0 30px;
 }
 
 .titre h1 {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 700;
 }
 
@@ -139,8 +180,6 @@ input::placeholder {
 }
 .filtres h2 {
     font-size: 18px;
-    justify-self:left;
-    align-self: center;
 }
 .filtres ul {
     display: inline-flex;
@@ -192,6 +231,14 @@ input::placeholder {
 
 @media screen and (max-width: 576px) {
 
+    .titre h1 {
+        font-size: 25px;
+    }
+
+    .titre p {
+        font-size: 18px;
+    }
+
     input {
         width: 240px;
     }
@@ -208,7 +255,6 @@ input::placeholder {
         color: white;
         padding: 18px;
         cursor: pointer;
-        width: auto;
     }
 
     .recherche button i:last-of-type {
@@ -221,6 +267,12 @@ input::placeholder {
         flex-direction: column;
     }
 
+    .filtres h2 {
+        margin: 0 0 20px 5px;
+        text-align: left;
+        width: 100%;
+    }
+
     .filtres ul li {
         margin-left: 0;
         margin: 5px;
@@ -228,7 +280,11 @@ input::placeholder {
     }
 
     .filtres-list {
-        margin-right: 0;
+        margin-right: 10px;
+    }
+
+    .infos p {
+        font-size: 18px;
     }
 
 }
@@ -239,7 +295,9 @@ input::placeholder {
     grid-template-columns: 2fr 1fr;
     column-gap: 30px;
     margin-bottom: 70px;
-    padding: 30px;
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 30px;
 }
 
 .hebergements-grid i {
@@ -263,7 +321,7 @@ input::placeholder {
     cursor: pointer;
 }
 
-#hebergements {
+.hebergements-grid h2 {
     width: 100%;
     margin: 40px 0;
 }
@@ -276,9 +334,9 @@ input::placeholder {
 
 .resultats-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 200px);
-    grid-gap: 30px;
+    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: repeat(2, 250px);
+    grid-gap: 20px;
     width: 100%;
 }
 
@@ -307,13 +365,13 @@ input::placeholder {
     padding: 10px;
 }
 
-.card-text h2 {
-    font-size: 15px;
+.card-text h3 {
+    font-size: 18px;
 }
 
 .card-text p {
-    font-size: 12px;
-    margin: 5px 0;
+    font-size: 15px;
+    margin: 10px 0;
 }
 .card-text i {
     font-size: 15px;
@@ -331,9 +389,6 @@ input::placeholder {
 .populaires {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
 }
 
 .populaires a {
@@ -343,19 +398,19 @@ input::placeholder {
 
 .populaires-title {
     display: flex;
-    justify-content: space-between;
     width: 100%;
-    margin-bottom: 45px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .populaires-title i {
-    font-size: 25px;
+    font-size: 20px;
 }
 .populaires-grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 140px);
-    grid-gap: 30px;
+    grid-template-rows: repeat(3, 150px);
+    row-gap: 30px;
     width: 100%;
 }
 
@@ -383,25 +438,22 @@ input::placeholder {
 
 .card-text-pop {
     width: 60%;
-    padding: 10px
+    padding: 10px;
 }
 
 .card-text-pop h3 {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .card-text-pop p {
-    font-size: 15px;
+    font-size: 18px;
     margin: 10px 0;
 }
 
-.card-text-pop p:last-of-type {
-    margin: 20px 0;
-}
-
-.card-text-pop strong {
+strong {
     font-weight: bold;
 }
+
 .fa-chart-line.black {
     color: black;
 }
@@ -410,8 +462,8 @@ input::placeholder {
     .hebergements-grid {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr auto;
-        grid-gap: 40px;
+        grid-template-rows: auto;
+        margin-bottom: 40px;
         padding: 0;
     }
 
@@ -429,6 +481,33 @@ input::placeholder {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(6, 200px);
     }
+    
+    .card-text p {
+        margin: 5px 0;
+    }
+    
+    .populaires {
+        padding-bottom: 40px;
+    }
+
+    .populaires-title {
+        margin-bottom: 0;
+        margin: 40px 0;
+    }
+
+    .card-text-pop {
+        padding: 5px;
+    }
+
+    .card-text-pop h3 {
+        font-size: 15px;
+    }
+
+    .card-text-pop p {
+        font-size: 15px;
+        margin: 25px 0;
+    }
+
 
 }
 /*-------------------ACTIVITES-----------------*/
