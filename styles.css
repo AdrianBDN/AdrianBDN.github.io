@@ -37,8 +37,12 @@ nav div {
 nav div:first-of-type {
     text-align: left;
 }
-.nav-activites, .nav-hebergements, .nav-suscribe {
+.nav-activites, .nav-hebergements {
     padding-top: 40px;
+}
+
+.nav-suscribe {
+    padding-top: 44px;
 }
 .nav-hebergements {
     grid-column: 3 / 4;
@@ -321,10 +325,11 @@ input::placeholder {
     cursor: pointer;
 }
 
-.hebergements-grid h2 {
+.resultats h2 {
     width: 100%;
     margin: 40px 0;
 }
+
 
 .block {
     background: #f2f2f2;
@@ -335,10 +340,11 @@ input::placeholder {
 .resultats-grid {
     display: grid;
     grid-template-columns: repeat(3, 250px);
-    grid-template-rows: repeat(2, 250px);
+    grid-template-rows: repeat(2, 220px);
     grid-gap: 20px;
     width: 100%;
 }
+
 
 .resultats-grid article {
     width: 100%;
@@ -371,7 +377,7 @@ input::placeholder {
 
 .card-text p {
     font-size: 15px;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 .card-text i {
     font-size: 15px;
@@ -389,7 +395,10 @@ input::placeholder {
 .populaires {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
+
 
 .populaires a {
     text-decoration: none;
@@ -398,9 +407,10 @@ input::placeholder {
 
 .populaires-title {
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    margin: 40px 0;
 }
 
 .populaires-title i {
@@ -485,29 +495,72 @@ strong {
     .card-text p {
         margin: 5px 0;
     }
-    
+
     .populaires {
         padding-bottom: 40px;
     }
 
     .populaires-title {
-        margin-bottom: 0;
-        margin: 40px 0;
+        margin: 30px 0;
     }
 
     .card-text-pop {
-        padding: 5px;
+        padding: 10px;
+    }
+
+    .card-text-pop h3 {
+        font-size: 16px;
+    }
+
+    .card-text-pop p {
+        font-size: 15px;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 1200px) {
+    
+    .hebergements-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 50px;
+    }
+
+    .resultats {
+        order: 2;
+        background: white;
+    }
+
+    .resultats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 220px);
+    }
+
+    .card-text h3 {
+        font-size: 14px;
+    }
+
+    .populaires {
+        padding-bottom: 50px;
+    }
+
+    .populaires-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 250px);
+        grid-template-rows: 1fr;
+        justify-content: space-evenly;
     }
 
     .card-text-pop h3 {
         font-size: 15px;
     }
 
-    .card-text-pop p {
-        font-size: 15px;
-        margin: 25px 0;
-    }
 
+    .help-block {
+        margin-right: 0;
+    }
 
 }
 /*-------------------ACTIVITES-----------------*/
