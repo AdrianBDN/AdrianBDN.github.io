@@ -501,7 +501,7 @@ strong {
     }
 
     .populaires-title {
-        margin: 30px 0;
+        margin: 40px 0;
     }
 
     .card-text-pop {
@@ -518,7 +518,53 @@ strong {
     }
 }
 
-@media screen and (min-width: 577px) and (max-width: 1200px) {
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    
+    .hebergements-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 50px;
+    }
+
+    .resultats {
+        order: 2;
+        background: white;
+    }
+
+    .resultats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 220px);
+    }
+
+    .card-text h3 {
+        font-size: 14px;
+    }
+
+    .populaires {
+        padding-bottom: 50px;
+    }
+
+    .populaires-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 130px);
+        justify-content: space-evenly;
+    }
+
+    .card-text-pop h3 {
+        font-size: 15px;
+    }
+
+
+    .help-block {
+        margin-right: 0;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
     
     .hebergements-grid {
         display: grid;
@@ -535,34 +581,50 @@ strong {
     .resultats-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 220px);
+        grid-template-rows: repeat(2, 250px);
     }
 
-    .card-text h3 {
-        font-size: 14px;
+    .populaires {
+        padding-bottom: 50px;
     }
+    
+}
 
+@media screen and (min-width: 993px) and (max-width: 1440px) {
+
+    .hebergements-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 50px;
+    }  
+
+    
+    .resultats {
+        order: 2;
+        background: white;
+    }
+    
+    .resultats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 250px);
+    }
+    
     .populaires {
         padding-bottom: 50px;
     }
 
     .populaires-grid {
         display: grid;
-        grid-template-columns: repeat(3, 250px);
-        grid-template-rows: 1fr;
-        justify-content: space-evenly;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 200px;
+        column-gap: 20px;
     }
-
-    .card-text-pop h3 {
-        font-size: 15px;
-    }
-
-
-    .help-block {
-        margin-right: 0;
-    }
-
+    
 }
+
+
 /*-------------------ACTIVITES-----------------*/
 .section-activites {
     padding: 0 30px;
@@ -666,6 +728,19 @@ strong {
         margin-bottom: 100px;
     }
 }
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    
+    .container-activites {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 200px);
+        grid-template-areas: 
+        "activity-1 activity-2 activity-3"
+        "activity-4 activity-5 activity-6";
+        margin: 30px 0 0 0;
+    }
+}
 /*--------------------FOOTER-------------------*/
 
 footer {
@@ -711,4 +786,24 @@ footer {
         flex-direction: column;
         align-items: flex-start;
     }
+
+    .help-block {
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+
+    .help-block {
+        margin-right: 0;
+    }
+       
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+    .help-block {
+        margin-right: 0;
+    }
+    
 }
