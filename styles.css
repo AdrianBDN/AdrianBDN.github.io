@@ -340,7 +340,7 @@ input::placeholder {
 .resultats-grid {
     display: grid;
     grid-template-columns: repeat(3, 250px);
-    grid-template-rows: repeat(2, 220px);
+    grid-template-rows: repeat(2, 250px);
     grid-gap: 20px;
     width: 100%;
 }
